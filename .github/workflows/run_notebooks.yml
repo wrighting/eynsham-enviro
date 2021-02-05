@@ -15,7 +15,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v2
 
@@ -30,14 +30,14 @@ jobs:
       uses: goanpeca/setup-miniconda@v1.1.2
       with:
         environment-file: environment.yml
-        activate-environment: buildit
+        activate-environment: env-01
         python-version: 3.7
         auto-activate-base: false
 
     - name: Build the pages
       shell: bash -l {0}
       run: |
-        conda activate buildit
+        conda activate env-01
         mkdir html
         jupyter nbconvert --to html --output-dir=html water.ipynb readings.ipynb
 
