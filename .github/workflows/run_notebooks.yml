@@ -39,6 +39,7 @@ jobs:
       run: |
         conda info
         conda list
+        conda activate env-01
         mkdir html
         jupyter nbconvert --to html --output-dir=html --execute water.ipynb readings.ipynb
 
