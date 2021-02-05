@@ -43,7 +43,7 @@ jobs:
         conda activate env-01
         jupyter kernelspec list
         mkdir html
-        jupyter nbconvert --to html --output-dir=html --ExecutePreprocessor.kernel_name=env-01 --execute water.ipynb readings.ipynb
+        jupyter nbconvert --to html --output-dir=html --ExecutePreprocessor.kernel_name=python3 --execute water.ipynb readings.ipynb
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
