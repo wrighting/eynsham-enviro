@@ -38,7 +38,7 @@ jobs:
       shell: bash -l {0}
       run: |
         mkdir html
-        jupyter nbconvert --to html --output-dir=html --ExecutePreprocessor.timeout=-1 --execute water.ipynb
+        jupyter nbconvert --to html --output-dir=html --ExecutePreprocessor.kernel_name=python3 --ExecutePreprocessor.timeout=-1 --execute water.ipynb
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
